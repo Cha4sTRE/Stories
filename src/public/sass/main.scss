@@ -1,0 +1,17 @@
+$primary: #3cffda;
+$secondary: #a5ffee; 
+$danger: #ff4136;
+$dark: #000000;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary":  $secondary,
+  "danger": $danger,
+  "dark":   $dark
+);
+
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/root";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
