@@ -12,7 +12,6 @@ const photo = require('../models/photo');
 
 router.get('/',async (req,res)=>{
     const photos= await Photo.find().lean()
-    console.log(photos)
     res.render('images',{ photos })
 });
 
@@ -43,9 +42,10 @@ router.get('/view/:photo_id',async (req,res)=>{
 
 router.get('/images/delete/:photo_id',async (req,res)=>{
     const{photo_id}= req.params
-    const photo= await Photo.findOneAndDelete(photo_id)
+    const photo= await Photo.findByIdAndDelete(photo_id)
     await cloudinary.v2.uploader.destroy(photo.public_id)
-    res.redirect('/images/add')
+    console.warn(photo_id, 'eliminated')
+    res.redirect('/')
 });
 
 module.exports= router

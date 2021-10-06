@@ -4,12 +4,13 @@ const multer= require('multer')
 const path= require('path')
 const exphbs= require('express-handlebars')
 const { urlencoded } = require('express')
+const { ExpressHandlebars } = require('express-handlebars')
 
 //inicializacion
 const app= express()
 require('./databse')
 //setting
-app.set('port',process.env.PORT || 3000)
+app.set('port',process.env.PORT || 4000)
 app.set('views',path.join(__dirname, 'views'))
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
