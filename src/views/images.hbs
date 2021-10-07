@@ -1,82 +1,75 @@
-  <title>Stories</title>
+<title>Stories</title>
 
-  <!-- Demo styles -->
-    <style>
-      .swiper {
-        width: 100%;
-        height: 500px
-      }
+<!-- Demo styles -->
+<style>
+  .swiper { width: 100%; height: 500px } .swiper-slide { text-align: center;
+  font-size: 18px; background: #fff; /* Center slide text vertically */ display:
+  -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex;
+  -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content:
+  center; justify-content: center; -webkit-box-align: center; -ms-flex-align:
+  center; -webkit-align-items: center; align-items: center; } .swiper-slide img
+  { display: block; width: 100%; height: 100%; object-fit:scale-down; }
+</style>
 
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
+<!-- Swiper -->
+<div class="container p-3">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
 
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
+      {{#each photos}}
+        <div class="swiper-slide"><img src="{{imageURL}}" alt="" /></div>
+      {{/each}}
 
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit:scale-down;
-      }
-    </style>
-
-  <!-- Swiper -->
-   <div class="container p-3">
-      <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        
-        {{#each photos}}
-            <div class="swiper-slide"><img src="{{imageURL}}" alt=""></div>
-        {{/each}}
-          
-      </div>
-     {{!--  <div class="swiper-button-next"></div>
+    </div>
+    {{!  <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div> --}}
-    </div>
-   </div>
+      <div class="swiper-pagination"></div> }}
+  </div>
+</div>
 
-    <hr class="bg-dark">
+<hr class="bg-dark" />
 
-    <div class="bg-secondary">
-      <div class="container p-3">
-        <div class="row">
-         {{#each photos}}
-          <div class="col-sm-6 col-md-4">
-              <div class="card mb-3 rounded-3">
-                  <img src="{{imageURL}}" class="car-img-top rounded" alt="">
-                   <div class="card-body p-3">
-                <h5 class="cad-title">{{title}}</h5>
-                <p class="card-text">{{description}}</p>
-                <a style="box-shadow: #000 7px 7px;" href="/view/{{_id}}" class="btn btn-primary">ver</a>
-              </div>
-              </div>
+<div class="bg-secondary">
+  <div class="container p-3">
+    <div class="row">
+      {{#each photos}}
+        <div class="col-sm-6 col-md-4">
+          <div class="card mb-3 rounded-3">
+            <img src="{{imageURL}}" class="car-img-top rounded" alt="" />
+            <div class="card-body p-3">
+              <h5 class="cad-title">{{title}}</h5>
+              <p class="card-text">{{description}}</p>
+              <a
+                style="box-shadow: #000 7px 7px;"
+                href="/view/{{_id}}"
+                class="btn btn-primary"
+              >ver</a>
+            </div>
           </div>
-         {{/each}}
-      </div>
-      </div>
+        </div>
+      {{/each}}
     </div>
 
-    
+  </div>
+</div>
+<div class="container p-3">
+  <div class="p-3 border border-dark rounded bg-light" id="disqus_thread"></div>
+        <script>
+          /** * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE
+          SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS. *
+          LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
+          https://disqus.com/admin/universalcode/#configuration-variables */ /*
+          var disqus_config = function () { this.page.url = PAGE_URL; // Replace
+          PAGE_URL with your page's canonical URL variable this.page.identifier
+          = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique
+          identifier variable }; */ (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script'); s.src =
+          'https://stories-15.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date()); (d.head ||
+          d.body).appendChild(s); })();
+        </script>
+        <noscript>Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-    
-
-
-
-
-
+      </div>
+</div>
