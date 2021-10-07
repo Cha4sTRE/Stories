@@ -10,7 +10,7 @@ cloudinary.config({
 const fs=require('fs-extra');
 const photo = require('../models/photo');
 
-router.get('/images',async (req,res)=>{
+router.get('/',async (req,res)=>{
     const photos= await Photo.find().lean()
     res.render('images',{ photos })
 });
